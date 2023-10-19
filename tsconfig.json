@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",
+      "module": "CommonJS", // Use CommonJS modules for Node.js require syntax
+      "outDir": "./dist",
+      "rootDir": "./src",
+      "strict": true,
+      "esModuleInterop": true, // Allows mixing import and require syntax
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+      "declaration": false
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules", "dist"]
+  }
