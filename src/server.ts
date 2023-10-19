@@ -28,7 +28,7 @@ try {
   const app = express();
   const port = 3000; // Choose your desired port
 
-  // const indexName = getEnv("PINECONE_INDEX");
+  const indexName = getEnv("PINECONE_INDEX");
   // const pinecone = new Pinecone();
 
   app.get('/recommend/:query', async (req, res) => {
@@ -49,7 +49,7 @@ try {
 
   //   let recs = await recommend(query, index)
   //   res.send(recs);
-    res.send(`hello ${query}`);
+    res.send(`hello ${query} ${indexName}`);
   });
   
   app.listen(port, () => {
