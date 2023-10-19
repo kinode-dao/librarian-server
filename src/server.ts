@@ -1,7 +1,7 @@
 import express from 'express';
 import { Index, Pinecone } from "@pinecone-database/pinecone";
 import { recommend } from './recommend';
-// import { Embedder } from "./embeddings";
+import { Embedder } from "./embeddings";
 import dotenv from 'dotenv';
 
 export type ArticleRecord = {
@@ -44,8 +44,8 @@ try {
     }
     
     const index: Index<ArticleRecord> = pinecone.index<ArticleRecord>(indexName).namespace('default');
-  //   const embedder = new Embedder();
-  //   await embedder.init("Xenova/all-MiniLM-L6-v2");
+    const embedder = new Embedder();
+    await embedder.init("Xenova/all-MiniLM-L6-v2");
 
     let recs = await recommend(query, index)
     res.send(recs);

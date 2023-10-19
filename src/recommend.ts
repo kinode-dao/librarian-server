@@ -5,6 +5,7 @@ import { Index } from "@pinecone-database/pinecone";
 
 export async function recommend(query: string, index: Index<ArticleRecord>) {
   // const embedder = new Embedder();
+  // await embedder.init("Xenova/all-MiniLM-L6-v2");
   // const queryEmbedding = await embedder.embed(query);
 
   // const recommendationsRaw = await index.query({
