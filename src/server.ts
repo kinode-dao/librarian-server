@@ -2,7 +2,7 @@ import express from 'express';
 // import { Index, Pinecone } from "@pinecone-database/pinecone";
 // import { recommend } from './recommend';
 // import { Embedder } from "./embeddings";
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 
 export type ArticleRecord = {
   index: number,
@@ -22,7 +22,7 @@ const getEnv = (key: string): string => {
   return value;
 };
 
-// dotenv.config();
+dotenv.config();
 
 try {
   const app = express();
