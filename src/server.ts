@@ -1,6 +1,6 @@
 import express from 'express';
 import { Index, Pinecone } from "@pinecone-database/pinecone";
-// import { recommend } from './recommend';
+import { recommend } from './recommend';
 // import { Embedder } from "./embeddings";
 import dotenv from 'dotenv';
 
@@ -47,9 +47,8 @@ try {
   //   const embedder = new Embedder();
   //   await embedder.init("Xenova/all-MiniLM-L6-v2");
 
-  //   let recs = await recommend(query, index)
-  //   res.send(recs);
-    res.send(`hello ${query} ${indexName}`);
+    let recs = await recommend(query, index)
+    res.send(recs);
   });
   
   app.listen(port, () => {
